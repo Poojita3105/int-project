@@ -60,7 +60,7 @@ function ContactPage() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Form */}  
           <div className="reveal">
             {submitted ? (
               <div style={{ textAlign: "center", padding: "4rem 2rem", background: "rgba(187,148,87,0.1)", border: "1px solid rgba(187,148,87,0.3)" }}>
