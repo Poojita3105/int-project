@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* 🔥 Prevent white flash */
+html, body, #root {
+  background-color: #432818;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: smoother rendering */
+body {
+  overflow-x: hidden;
+}
