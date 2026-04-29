@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useScrollReveal } from "../hooks/useScroll";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import Footer from "../components/Footer";
-
+import { useNavigate } from "react-router-dom";
 
 
 const PORTFOLIO_ITEMS = [
@@ -23,6 +23,7 @@ function PortfolioPage() {
   useScrollReveal();
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
   if (selectedItem) {
@@ -108,7 +109,15 @@ function PortfolioPage() {
             </div>
             <BeforeAfterSlider before={selectedItem.before} after={selectedItem.img} />
             <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
-              <button className="btn-primary" onClick={() => setSelectedItem(null)}>Request Similar Project</button>
+<button
+  className="btn-primary"
+  onClick={() => {
+    setSelectedItem(null);
+    navigate("/contact");
+  }}
+>
+  Request Similar Project
+</button>
             </div>
           </div>
         </div>

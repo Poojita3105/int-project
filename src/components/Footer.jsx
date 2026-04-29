@@ -41,9 +41,37 @@ function Footer() {
           <div>
             <div style={{ fontFamily: "'Krona One', sans-serif", fontSize: "0.6rem", letterSpacing: "0.3em", color: "var(--gold)", textTransform: "uppercase", marginBottom: "1.2rem" }}>Contact</div>
             <div style={{ color: "rgba(255,230,167,0.5)", fontFamily: "'Cormorant Garamond', serif", lineHeight: 2 }}>
-              <div>📍 42 Royal Crescent, Mumbai</div>
-              <div>📞 +91 98765 43210</div>
-              <div>✉ hello@moodcraft.in</div>
+             <div>
+  📍{" "}
+  <a
+  href="https://www.google.com/maps/search/?api=1&query=42+Royal+Crescent+Bandra+West+Mumbai"
+  target="_blank"
+  rel="noreferrer"
+  className="footer-contact-link"
+>
+    42 Royal Crescent, Mumbai
+  </a>
+</div>
+
+<div>
+  📞{" "}
+ <a
+  href="tel:+919876543210"
+  className="footer-contact-link"
+>
+    +91 98765 43210
+  </a>
+</div>
+
+<div>
+  ✉{" "}
+  <a
+  href="mailto:hello@moodcraft.in"
+  className="footer-contact-link"
+>
+    hello@moodcraft.in
+  </a>
+</div>
             </div>
           </div>
         </div>

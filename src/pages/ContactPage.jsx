@@ -32,9 +32,44 @@ function ContactPage() {
               <div className="section-tag">◆ Contact Info ◆</div>
               <h2 style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1.8rem", color: "var(--cream)", marginBottom: "2rem" }}>Let's Create Something Extraordinary</h2>
               {[
-                { icon: "📍", title: "Studio Address", val: "42 Royal Crescent, Bandra West, Mumbai – 400050" },
-                { icon: "📞", title: "Phone", val: "+91 98765 43210" },
-                { icon: "✉", title: "Email", val: "hello@moodcraft.in" },
+{
+  icon: "📍",
+  title: "Studio Address",
+  val: (
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=42+Royal+Crescent+Bandra+West+Mumbai"
+      target="_blank"
+      rel="noreferrer"
+      style={{ color: "inherit", textDecoration: "none" }}
+    >
+      42 Royal Crescent, Bandra West, Mumbai – 400050
+    </a>
+  )
+},
+{
+  icon: "📞",
+  title: "Phone",
+  val: (
+    <a
+      href="tel:+919876543210"
+      style={{ color: "inherit", textDecoration: "none" }}
+    >
+      +91 98765 43210
+    </a>
+  )
+},                
+{
+  icon: "✉",
+  title: "Email",
+  val: (
+    <a
+      href="mailto:hello@moodcraft.in"
+      style={{ color: "inherit", textDecoration: "none" }}
+    >
+      hello@moodcraft.in
+    </a>
+  )
+},
                 { icon: "⏰", title: "Hours", val: "Mon–Sat: 10:00 AM – 7:00 PM" },
               ].map(item => (
                 <div key={item.title} style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>

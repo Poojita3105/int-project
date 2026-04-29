@@ -835,7 +835,20 @@ const GlobalStyle = () => (
   color: #D4AF37;
 }
 
+.footer-contact-link {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
 
+/* Hover effect */
+.footer-contact-link:hover {
+  color: var(--gold);
+  filter: brightness(1.3);
+  transform: translateX(3px);
+  text-shadow: 0 0 10px rgba(187,148,87,0.4);
+}
 
     @media (max-width: 480px) {
       .masonry { columns: 1; }
