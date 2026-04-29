@@ -20,7 +20,7 @@ function HomePage() {
         <div className="hero-bg" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80)" }} />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <div className="hero-tag">◆ Luxury Interior Design ◆</div>
+          <div className="hero-tag" > ◆ Luxury Interior Design ◆</div>
           <h1 className="hero-title">Where Spaces<br /><span className="text-gold-grad">Tell Stories</span></h1>
           <p className="hero-sub">Bespoke interiors crafted for those who demand the extraordinary</p>
           <div className="hero-cta-group">
@@ -47,7 +47,7 @@ function HomePage() {
       </section>
 
       {/* Featured Projects */}
-      <section className="section" style={{ background: "linear-gradient(180deg, var(--dark) 0%, #200d00 100%)" }}>
+      <section className="section" style={{ background: "linear-gradient(180deg, var(--dark) 0%, #200d00 100%)",  paddingTop: "3rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
             <div className="section-tag">◆ Featured Projects ◆</div>
@@ -72,9 +72,15 @@ function HomePage() {
       </section>
 
       {/* 3D Demo */}
-      <section className="section" style={{ background: "linear-gradient(135deg, #1a0500, #2d1205)" }}>
+     <section
+  className="section"
+  style={{
+    background: "linear-gradient(135deg, #1a0500, #2d1205)",
+    paddingTop: "0rem"
+  }}
+>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div className="reveal" style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "1.5rem" }}>
             <div className="section-tag">◆ Interactive Experience ◆</div>
             <h2 className="section-title">Design Your Dream Room</h2>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", color: "rgba(255,230,167,0.6)", fontSize: "1.2rem", marginTop: "1rem" }}>
@@ -86,7 +92,7 @@ function HomePage() {
       </section>
 
       {/* Services Preview */}
-      <section className="section" style={{ background: "var(--dark)" }}>
+      <section className="section" style={{ background: "var(--dark)", paddingTop: "2rem" }}> 
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="reveal" style={{ textAlign: "center", marginBottom: "3rem" }}>
             <div className="section-tag">◆ What We Offer ◆</div>

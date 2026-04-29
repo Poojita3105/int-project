@@ -3,69 +3,174 @@ import { useScrollReveal } from "../hooks/useScroll";
 import RoomDesigner3D from "../components/RoomDesigner3D";
 import Footer from "../components/Footer";
 
-const SERVICES = [
-  { icon: "🏠", title: "Residential Design", price: "From ₹2.5L", desc: "Complete interior solutions for apartments, villas, and luxury bungalows. From concept to completion, we handle every detail.", features: ["Custom furniture design", "Material sourcing", "Lighting design", "Art curation"] },
-  { icon: "🏢", title: "Commercial Spaces", price: "From ₹5L", desc: "Corporate offices, hotels, restaurants, and retail spaces designed to impress clients and inspire your team.", features: ["Brand-aligned design", "Space planning", "Ergonomic solutions", "Project management"] },
-  { icon: "🔑", title: "Turnkey Projects", price: "From ₹8L", desc: "End-to-end interior transformation with zero hassle. We manage everything from concept to key handover.", features: ["Civil work coordination", "Vendor management", "Quality control", "Handover & support"] },
-  { icon: "💎", title: "Design Consultation", price: "₹15,000/session", desc: "Expert advice for specific challenges — whether it's a single room refresh or a styling intervention.", features: ["Space analysis", "Color & material advice", "Furniture layout", "Shopping list"] },
-  { icon: "🖥️", title: "3D Visualization", price: "From ₹35,000", desc: "Photorealistic renders of your space before construction begins, so you can see and approve every detail.", features: ["Photorealistic renders", "360° walkthroughs", "Material testing", "Revision rounds"] },
-  { icon: "🌿", title: "Biophilic Design", price: "From ₹1.2L", desc: "Nature-inspired spaces that enhance wellbeing through plants, natural materials, and organic forms.", features: ["Living walls", "Natural material sourcing", "Wellness-first layouts", "Maintenance plans"] },
+
+ const SERVICES = [
+  {
+    icon: "https://img.icons8.com/ios-filled/100/home.png",
+    title: "Residential Design",
+    price: "From ₹2.5L",
+    desc: "Complete interior solutions for apartments, villas, and luxury bungalows.",
+    features: ["Custom furniture", "Material sourcing", "Lighting design", "Art curation"]
+  },
+  {
+    icon: "https://img.icons8.com/ios-filled/100/building.png",
+    title: "Commercial Spaces",
+    price: "From ₹5L",
+    desc: "Corporate offices, hotels, restaurants, and retail spaces.",
+    features: ["Brand design", "Space planning", "Ergonomics", "Execution"]
+  },
+  {
+    icon: "https://img.icons8.com/ios-filled/100/key.png",
+    title: "Turnkey Projects",
+    price: "From ₹8L",
+    desc: "End-to-end interior transformation.",
+    features: ["Civil work", "Vendor mgmt", "Quality control", "Handover"]
+  },
+  {
+    icon: "https://img.icons8.com/ios-filled/100/diamond.png",
+    title: "Consultation",
+    price: "₹15,000",
+    desc: "Expert advice for your space.",
+    features: ["Layout", "Colors", "Furniture", "Shopping list"]
+  }
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   useScrollReveal();
   const navigate = useNavigate();
 
   return (
-    <div className="page-enter" style={{ background: "linear-gradient(180deg, var(--dark), #1a0800)" }}>
+    <div style={{ background: "linear-gradient(180deg,#140800,#1a0a00)" }}>
+
+      {/* HERO */}
       <section className="hero" style={{ minHeight: "65vh" }}>
         <div className="hero-bg" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80)" }} />
         <div className="hero-overlay" style={{ background: "linear-gradient(135deg, rgba(153,88,42,0.8), rgba(26,10,0,0.95))" }} />
-        <div className="hero-content">
+        <div className="hero-content" style={{ marginTop: "2rem" }}>
           <div className="hero-tag">◆ What We Offer ◆</div>
-          <h1 className="hero-title" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>Exceptional Services<br /><span className="text-gold-grad">For Every Space</span></h1>
+          <h1 className="hero-title" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
+            Exceptional Services<br />
+            <span className="text-gold-grad">For Every Space</span>
+          </h1>
           <p className="hero-sub">Comprehensive interior solutions from concept to completion</p>
         </div>
       </section>
 
-      <section className="section">
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
-            {SERVICES.map((s, i) => (
-              <div key={s.title} className="service-card reveal" style={{ animationDelay: `${i * 0.1}s`, cursor: "pointer" }} onClick={() => navigate("/contact")}>
-                <div className="service-icon">{s.icon}</div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", color: "var(--cream)" }}>{s.title}</h3>
-                  <span style={{ fontFamily: "'Krona One', sans-serif", fontSize: "0.6rem", color: "var(--gold)", letterSpacing: "0.1em" }}>{s.price}</span>
-                </div>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "rgba(255,230,167,0.6)", lineHeight: 1.7, marginBottom: "1.2rem" }}>{s.desc}</p>
-                <ul style={{ listStyle: "none" }}>
-                  {s.features.map(f => (
-                    <li key={f} style={{ fontFamily: "'Cormorant Garamond', serif", color: "rgba(255,230,167,0.7)", padding: "0.2rem 0", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                      <span style={{ color: "var(--gold)" }}>◆</span> {f}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ marginTop: "1.5rem" }}>
-                  <span style={{ fontFamily: "'Krona One', sans-serif", fontSize: "0.55rem", color: "var(--gold)", letterSpacing: "0.2em" }}>ENQUIRE NOW →</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* SERVICES */}
+      <section style={{ padding: "2rem" }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+          gap: "1.5rem"
+        }}>
+          {SERVICES.map((s, i) => (
+            
+             <div
+  key={i}
+  className="service-hover-card"
+  onClick={() => navigate("/contact")}
+  style={{
+                padding: "1.5rem",
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(212,175,55,0.2)",
+                borderRadius: "16px",
+                cursor: "pointer",
+                transition: "0.3s"
+              }}
+            >
+              <img
+  src={s.icon}
+  alt={s.title}
+  style={{
+    width: "42px",
+    height: "42px",
+    marginBottom: "10px",
+    filter: "brightness(0) saturate(100%) invert(80%) sepia(30%)"
+  }}
+/>
+              <h3 style={{ color: "#f5e6c8" }}>{s.title}</h3>
+              <span style={{ color: "#d4af37" }}>{s.price}</span>
+              <p style={{ color: "#cbb58a" }}>{s.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* 3D Demo */}
-      <section className="section" style={{ background: "linear-gradient(135deg, var(--espresso), var(--crimson))" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div className="reveal" style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <div className="section-tag">◆ Try Before You Buy ◆</div>
-            <h2 className="section-title">Experience It in 3D First</h2>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", color: "rgba(255,230,167,0.6)", fontSize: "1.2rem", marginTop: "1rem" }}>
-              Design your room virtually — see how furniture and styles transform your space
-            </p>
+      {/* ── ROOM PLANNER SECTION ── */}
+      <section style={{
+        padding: "5rem 2rem 4rem",
+        background: "linear-gradient(135deg,#1a0a00,#2b1405)",
+      }}>
+        {/* Section header */}
+        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+          <div style={{
+            display: "inline-block",
+            background: "rgba(212,175,55,0.1)",
+            border: "1px solid rgba(212,175,55,0.25)",
+            color: "#D4AF37",
+            fontSize: 11,
+            letterSpacing: "0.12em",
+            padding: "5px 16px",
+            borderRadius: 20,
+            marginBottom: 16,
+            textTransform: "uppercase",
+          }}>
+            ◆ Interactive Tool ◆
           </div>
+
+          <h2 style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "clamp(1.8rem, 4vw, 3rem)",
+            color: "#F5E6C8",
+            margin: "0 0 12px",
+            lineHeight: 1.2,
+          }}>
+            Design Your Dream Room
+          </h2>
+
+          <p style={{
+            color: "#9B8C7C",
+            fontSize: 15,
+            maxWidth: 500,
+            margin: "0 auto",
+            lineHeight: 1.7,
+          }}>
+            Try our 2D floor plan planner — drag, place and visualize your space
+            before you commit. Snap furniture to grid, rotate pieces, layer rugs
+            and decor exactly how you want.
+          </p>
+        </div>
+
+        {/* Planner */}
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <RoomDesigner3D />
+        </div>
+
+        {/* CTA below planner */}
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <p style={{ color: "#7A6A5A", fontSize: 13, marginBottom: 16 }}>
+            Like what you've designed? Our experts will bring it to life.
+          </p>
+          <button
+            onClick={() => navigate("/contact")}
+            style={{
+              background: "linear-gradient(135deg, #D4AF37, #B8960C)",
+              border: "none",
+              color: "#1a0a00",
+              padding: "12px 32px",
+              borderRadius: 8,
+              fontWeight: 700,
+              fontSize: 14,
+              cursor: "pointer",
+              letterSpacing: "0.05em",
+              boxShadow: "0 8px 30px rgba(212,175,55,0.3)",
+              transition: "transform 0.2s, box-shadow 0.2s",
+            }}
+            onMouseOver={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(212,175,55,0.4)"; }}
+            onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 8px 30px rgba(212,175,55,0.3)"; }}
+          >
+            Book a Free Consultation →
+          </button>
         </div>
       </section>
 
@@ -73,5 +178,3 @@ function ServicesPage() {
     </div>
   );
 }
-
-export default ServicesPage;

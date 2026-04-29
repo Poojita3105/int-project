@@ -213,12 +213,26 @@ const GlobalStyle = () => (
       max-width: 900px;
     }
     .hero-tag {
-      font-family: 'Krona One', sans-serif;
-      font-size: 0.6rem; letter-spacing: 0.5em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1.5rem;
-      opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards;
-    }
+  display: inline-block;
+
+  font-family: 'Krona One', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+
+  color: #f0e8ce;
+
+  background: rgba(140, 110, 11, 0.43);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  padding: 5px 16px;
+  border-radius: 20px;
+
+  margin-bottom: 1.5rem;
+
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s ease forwards;
+}
     .hero-title {
       font-family: 'Cinzel Decorative', serif;
       font-size: clamp(2.5rem, 7vw, 5.5rem);
@@ -604,6 +618,224 @@ const GlobalStyle = () => (
       .navbar { padding: 1rem 1.5rem; }
       .section { padding: 4rem 1.2rem; }
     }
+
+    .timeline-hover {
+  transition: all 0.4s ease;
+  padding: 1.5rem;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Hover effect */
+.timeline-hover:hover {
+  transform: translateY(-8px);
+  background: rgba(187, 148, 87, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.2);
+}
+
+/* Step number glow */
+.timeline-hover:hover div {
+  color: rgba(212, 175, 55, 0.8) !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.timeline-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: 0.4s;
+}
+
+.timeline-hover:hover::before {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+  .service-hover-card {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover lift + glow */
+.service-hover-card:hover {
+  transform: translateY(-10px);
+  background: rgba(212,175,55,0.06);
+  border-color: rgba(212,175,55,0.5);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  filter: brightness(1.15);
+}
+
+/* Icon glow */
+.service-hover-card:hover div {
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.6));
+}
+
+/* Subtle shine effect */
+.service-hover-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(212,175,55,0.08),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.service-hover-card:hover::before {
+  top: 100%;
+}
+  .service-hover-card:hover img {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+  .mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.mood-item {
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* image style */
+.mood-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  filter: brightness(0.9);
+}
+
+/* hover effects */
+.mood-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+/* glow overlay */
+.mood-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(212,175,55,0);
+  transition: 0.4s;
+}
+
+.mood-item:hover::after {
+  background: rgba(212,175,55,0.08);
+}
+
+.testimonial-hover {
+  padding: 1.8rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.15);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover lift + brightness */
+.testimonial-hover:hover {
+  transform: translateY(-8px);
+  background: rgba(212,175,55,0.06);
+  border-color: rgba(212,175,55,0.4);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  filter: brightness(1.2);
+}
+
+/* soft gold glow effect */
+.testimonial-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(212,175,55,0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.testimonial-hover:hover::before {
+  opacity: 1;
+}
+
+/* star glow */
+.testimonial-hover:hover .stars {
+  color: #D4AF37;
+  text-shadow: 0 0 10px rgba(212,175,55,0.5);
+}
+
+
+.rating-summary {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+
+  /* background image */
+  background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80") center/cover no-repeat;
+}
+
+/* dark overlay for readability */
+.rating-summary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 10, 0, 0.85),
+    rgba(111, 29, 27, 0.7)
+  );
+  z-index: 1;
+}
+
+/* keep content above overlay */
+.rating-summary > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* hover effect */
+.rating-summary {
+  transition: all 0.4s ease;
+}
+
+.rating-summary:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* glow accent on numbers */
+.rating-summary:hover .stars {
+  text-shadow: 0 0 12px rgba(212,175,55,0.5);
+  color: #D4AF37;
+}
+
+
 
     @media (max-width: 480px) {
       .masonry { columns: 1; }

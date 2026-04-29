@@ -17,7 +17,7 @@ function ContactPage() {
       <section className="hero" style={{ minHeight: "60vh" }}>
         <div className="hero-bg" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80)" }} />
         <div className="hero-overlay" style={{ background: "linear-gradient(135deg, rgba(26,10,0,0.92), rgba(153,88,42,0.5), rgba(26,10,0,0.95))" }} />
-        <div className="hero-content">
+         <div className="hero-content" style={{ marginTop: "4rem" }}>
           <div className="hero-tag">◆ Get In Touch ◆</div>
           <h1 className="hero-title" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>Begin Your<br /><span className="text-gold-grad">Design Journey</span></h1>
           <p className="hero-sub">Every iconic space started with a single conversation</p>
@@ -82,14 +82,13 @@ function ContactPage() {
                     className="input-field"
                     value={form.service}
                     onChange={e => setForm({ ...form, service: e.target.value })}
-                    style={{ color: form.service ? "var(--cream)" : "rgba(255,230,167,0.3)", background: "rgba(67,40,24,0.3)" }}
+                    style={{ color: form.service ? "var(--cream)" : "rgba(255, 230, 167, 0.89)", background: "rgba(67,40,24,0.3)" }}
                   >
-                    <option value="">Select Service</option>
-                    <option>Residential Design</option>
-                    <option>Commercial Spaces</option>
-                    <option>Turnkey Project</option>
-                    <option>Design Consultation</option>
-                    <option>3D Visualization</option>
+                     <option style={{ color: "#000" }}>Residential Design</option>
+  <option style={{ color: "#000" }}>Commercial Spaces</option>
+  <option style={{ color: "#000" }}>Turnkey Project</option>
+  <option style={{ color: "#000" }}>Design Consultation</option>
+  <option style={{ color: "#000" }}>3D Visualization</option>
                   </select>
                   <input className="input-field" type="date" placeholder="Preferred Date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} />
                   <textarea className="input-field" rows={4} placeholder="Tell us about your project..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} style={{ resize: "vertical" }} />

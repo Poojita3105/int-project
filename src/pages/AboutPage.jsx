@@ -45,9 +45,9 @@ function AboutPage() {
       </section>
 
       {/* Process */}
-      <section className="section" style={{ background: "var(--dark)" }}>
+      <section className="section" style={{ background: "var(--dark)",padding: "3rem" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "3rem" }}>
             <div className="section-tag">◆ Our Process ◆</div>
             <h2 className="section-title">How We Create<br />Your Perfect Space</h2>
           </div>
@@ -58,7 +58,7 @@ function AboutPage() {
               { step: "03", title: "Material Selection", desc: "Handpicked premium materials, bespoke furniture, and curated art to bring the concept to life." },
               { step: "04", title: "Execution & Delivery", desc: "Meticulous project management ensuring every detail is perfect, delivered on time." },
             ].map((item, i) => (
-              <div key={item.step} className="timeline-item reveal" style={{ animationDelay: `${i * 0.15}s` }}>
+              <div key={item.step} className="timeline-item reveal timeline-hover" style={{ animationDelay: `${i * 0.15}s` }}>
                 <div style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "2rem", color: "rgba(187,148,87,0.3)", marginBottom: "0.3rem" }}>{item.step}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "var(--cream)", marginBottom: "0.6rem" }}>{item.title}</h3>
                 <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "rgba(255,230,167,0.6)", lineHeight: 1.7 }}>{item.desc}</p>
